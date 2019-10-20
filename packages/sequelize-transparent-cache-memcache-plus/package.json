@@ -21,11 +21,8 @@
     "email": "daniel.hreben@gmail.com"
   },
   "license": "CC-BY-4.0",
-  "peerDependencies": {
-    "memcache-plus": "^0.2.19",
-    "sequelize-transparent-cache": "^2.0.0"
-  },
   "devDependencies": {
-    "memcache-plus": "^0.2.19"
+    "memcache-plus": "^0.2.20",
+    "sequelize-transparent-cache": "^2.2.0"
   }
 }

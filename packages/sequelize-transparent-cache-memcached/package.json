@@ -20,8 +20,8 @@
     "email": "daniel.hreben@gmail.com"
   },
   "license": "CC-BY-4.0",
-  "peerDependencies": {
+  "devDependencies": {
     "memcached": "^2.2.2",
-    "sequelize-transparent-cache": "^2.0.0"
+    "sequelize-transparent-cache": "^2.2.0"
   }
 }

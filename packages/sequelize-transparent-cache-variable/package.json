@@ -19,7 +19,7 @@
     "email": "daniel.hreben@gmail.com"
   },
   "license": "CC-BY-4.0",
-  "peerDependencies": {
-    "sequelize-transparent-cache": "^2.0.0"
+  "devDependencies": {
+    "sequelize-transparent-cache": "^2.2.0"
   }
 }
