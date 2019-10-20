@@ -73,7 +73,7 @@ const user = await User.cache().findByPk(1);
 
 // Update in db and cache
 await user.cache().update({
-  name: 'Vikki'
+  name: 'Dmitry'
 })
 
 ```
@@ -93,6 +93,7 @@ Instance:
 * [`update()`](http://docs.sequelizejs.com/class/lib/model.js~Model.html#static-method-update)
 * [`destroy()`](http://docs.sequelizejs.com/class/lib/model.js~Model.html#instance-method-destroy)
 * [`reload()`](http://docs.sequelizejs.com/class/lib/model.js~Model.html#instance-method-reload)
+* `client()` Get instance of used adaptor
 
 Model:
 * Automatic cache methods - does not require cache key: `cache()`
@@ -100,11 +101,12 @@ Model:
   * [`findByPk()`](http://docs.sequelizejs.com/class/lib/model.js~Model.html#static-method-findByPk)
   * [`upsert()`](http://docs.sequelizejs.com/class/lib/model.js~Model.html#static-method-upsert) - **EXPERIMENTAL**
   * [`insertOrUpdate()`](http://docs.sequelizejs.com/class/lib/model.js~Model.html#static-method-upsert) - **EXPERIMENTAL**
+  * `client()` Get instance of used adaptor
 * Manual cache methods - require cache key: `cache(key)`
   * [`findAll()`](http://docs.sequelizejs.com/class/lib/model.js~Model.html#static-method-findAll)
   * [`findOne()`](http://docs.sequelizejs.com/class/lib/model.js~Model.html#static-method-findOne)
-
-In addition, both objects will contain `client()` method to get cache adaptor.
+  * `clear()` Clear cache for passed `key`
+  * `client()` Get instance of used adaptor
 
 ## Available adaptors
 
@@ -115,8 +117,8 @@ In addition, both objects will contain `client()` method to get cache adaptor.
 
 You can easy write your own adaptor. Each adaptor must implement 3 methods:
 
-* `get(path: Array): Promise<value>`
-* `set(path: Array, value: Object): Promise`
-* `del(path: Array): Promise`
+* `get(path: Array<string|number>): Promise<value>`
+* `set(path: Array<string|number>, value: Object): Promise<void>`
+* `del(path: Array<string|number>): Promise<void>`
 
-Checkout existed adaptors for reference implementation.
+Checkout available adaptors for reference implementation.
