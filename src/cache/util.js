@@ -16,7 +16,7 @@ function dataToInstance (model, data) {
 }
 
 function restoreTimestamps (data, instance) {
-  const timestampFields = ['createdAt', 'updatedAt', 'deletedAt']
+  const timestampFields = ['created_at', 'updated_at', 'deleted_at']
   
   if (!data) {
     return;

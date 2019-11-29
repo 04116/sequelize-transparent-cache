@@ -1,27 +1,27 @@
 {
-	"private": true,
-	"scripts": {
-		"postinstall": "lerna bootstrap",
-		"test": "jest --config jest.json",
-		"lint": "eslint .",
-		"posttest": "codecov"
-	},
-	"devDependencies": {
-		"codecov": "^3.1.0",
-		"eslint": "^6.0.0",
-		"eslint-config-standard": "^12.0.0",
-		"eslint-plugin-import": "^2.2.0",
-		"eslint-plugin-jest": "^22.7.1",
-		"eslint-plugin-node": "^9.1.0",
-		"eslint-plugin-promise": "^4.0.0",
-		"eslint-plugin-standard": "^4.0.0",
-		"jest": "^24.8.0",
-		"lerna": "^3.15.0"
-	},
-	"eslintConfig": {
-		"extends": [
-			"plugin:jest/recommended",
-			"standard"
-		]
-	}
+  "name": "sequelize-transparent-cache",
+  "version": "2.2.1",
+  "description": "Simple to use and universal cache layer for Sequelize",
+  "main": "src/index.js",
+  "keywords": [
+    "sequelize",
+    "cache",
+    "plugin"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/DanielHreben/sequelize-transparent-cache.git"
+  },
+  "author": {
+    "name": "Daniel Hreben",
+    "email": "daniel.hreben@gmail.com"
+  },
+  "license": "CC-BY-4.0",
+  "peerDependencies": {
+    "sequelize": ">=4.0.0"
+  },
+  "devDependencies": {
+    "sequelize": ">=4.0.0",
+    "sqlite3": "^4.0.6"
+  }
 }
