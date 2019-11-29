@@ -17,6 +17,10 @@ function dataToInstance (model, data) {
 
 function restoreTimestamps (data, instance) {
   const timestampFields = ['createdAt', 'updatedAt', 'deletedAt']
+  
+  if (!data) {
+    return;
+  }
 
   for (const field of timestampFields) {
     const value = data[field]
@@ -36,7 +40,7 @@ function restoreTimestamps (data, instance) {
       try {
         const nestedInstances = instance.get(key)
         value.forEach((nestedValue, i) => restoreTimestamps(nestedValue, nestedInstances[i]))
-      } catch { // TODO: Fix issue with JSON and BLOB columns
+      } catch (e) { // TODO: Fix issue with JSON and BLOB columns
 
       }
 
@@ -47,7 +51,7 @@ function restoreTimestamps (data, instance) {
       try {
         const nestedInstance = instance.get(key)
         Object.values(value).forEach(nestedValue => restoreTimestamps(nestedValue, nestedInstance))
-      } catch { // TODO: Fix issue with JSON and BLOB columns
+      } catch (e) { // TODO: Fix issue with JSON and BLOB columns
 
       }
     }
